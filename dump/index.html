@@ -1,0 +1,59 @@
+<html>
+    <body>
+        <canvas width="1000", height="1000"></canvas>
+        <script>
+            let canvas = document.querySelector('canvas');
+            let context = canvas.getContext('2d');
+            const x_start = 250;
+            const y_start = 250;
+            const rect_width = 500;
+            const rect_height = 500;
+            const border_width = 5
+            const border_line_width = 3
+
+            // background
+            context.fillStyle = '#000000'
+            context.fillRect(
+                x=x_start,
+                y=y_start,
+                w=rect_width,
+                h=rect_height
+                );
+            // background border
+            context.beginPath();
+            context.lineWidth = border_line_width;
+            context.strokeStyle = "#000000"
+            context.rect(
+                x=x_start-border_width,
+                y=y_start-border_width,
+                w=rect_width+2*border_width,
+                h=rect_height+2*border_width
+                );
+            context.stroke();
+            
+            
+            const circle = (x,y,r) => {
+                context.beginPath();
+                context.lineWidth = 2;
+                context.strokeStyle = "#ffffff"
+                context.arc(x,y,r,0,2*Math.PI);
+                context.stroke();
+            }
+            
+
+            for (let i=0; i<5; i++){
+                for (let j=0; j<5; j++){
+                    circle(x=300+i*100,y=300+j*100,r=20)
+                    circle(x=300+i*100,y=300+j*100,r=15)
+                }
+            }
+
+            l = ['as','s','sff','wer,','saf']
+            l.forEach(element => {
+                console.log(element)
+            });
+
+
+        </script>
+    </body>
+</html>
