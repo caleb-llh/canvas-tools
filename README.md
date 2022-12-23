@@ -1,8 +1,10 @@
+Makes use of [mattdesl/canvas-sketch](https://github.com/mattdesl/) npm library
+
 # Dependencies
 - Node.js (npm)
 - make
 - ffmpeg (for video streaming)
-```npm install @ffmpeg-installer/ffmpeg --global```
+    - ```npm install @ffmpeg-installer/ffmpeg --global```
 
 
 ##### Run `make` to see available commands
