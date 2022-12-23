@@ -7,9 +7,10 @@ NEW_FILE=${title}.js
 regex="${NEW_FILE}"
 for file in ./*; do
     if [[ $file =~ $regex ]]; then
-        npx canvas-sketch ${file} --open
+        echo "${file} exists.  Run 'make open file=${file}' instead."
+        exit 0
     fi
 done
 
 # else create new file
-npx canvas-sketch ${NEW_FILE} --new --open
+npx canvas-sketch ${NEW_FILE} --new --open --hot --template=$1
