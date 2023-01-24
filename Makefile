@@ -14,7 +14,7 @@
 
 
 help: ## Display this help text
-	grep -E '(^[a-zA-Z_-]+:.*?##.*$$)|(^##)' $(firstword $(MAKEFILE_LIST)) | awk 'BEGIN {FS = ":.*?## "}{printf "$(NORMAL_GREEN)%-20s$(NC) %s\n", $$1, $$2}' | sed -e 's/;32m##/;33m/' | sed -e 's/[0|1];33m#/0m$(shell printf "%-20s")/'
+	grep -E '(^[a-zA-Z0-9_-]+:.*?##.*$$)|(^##)' $(firstword $(MAKEFILE_LIST)) | awk 'BEGIN {FS = ":.*?## "}{printf "$(NORMAL_GREEN)%-20s$(NC) %s\n", $$1, $$2}' | sed -e 's/;32m##/;33m/' | sed -e 's/[0|1];33m#/0m$(shell printf "%-20s")/'
 
 canvas: ## Create new canvas
 	@./scripts/canvas.sh default
@@ -22,7 +22,7 @@ canvas: ## Create new canvas
 p5: ## Create new canvas using p5.js template
 	@./scripts/canvas.sh p5
 
-three: ## Create new canvas using p5.js template
+three: ## Create new canvas using three.js template
 	@./scripts/canvas.sh three
 
 open: ## Open canvas specified by <file> arg. CMD+S to save PNG. CMD+SHIFT+S to save mp4.
